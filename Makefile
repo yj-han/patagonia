@@ -12,7 +12,7 @@ STY_FILES = $(wildcard $(SRC_DIR)/*.sty)
 PRESENTATION = presentation
 
 # LaTeX compiler
-LATEX = pdflatex
+LATEX = latexmk -xelatex
 
 # Default target
 all: $(BUILD_DIR) copy_sty compile_presentation

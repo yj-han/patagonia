@@ -1,5 +1,31 @@
 \ProvidesPackage{beamerinnerthemepatagonia}
 
-\setbeamertemplate{itemize items}[circle]
+\RequirePackage{pgfopts}
+\RequirePackage{tikz}
+
+\setbeamertemplate{title page}{
+  \begin{minipage}[b][\paperheight]{\textwidth}
+    \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
+    \vfill%
+    \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+    \usebeamertemplate*{title separator}
+
+    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+    \vfill
+    \vspace*{1mm}
+  \end{minipage}
+}
+
+\newlength{\patagonia@titleseparator@linewidth}
+\setlength{\patagonia@titleseparator@linewidth}{4pt}
+\setbeamertemplate{title separator}{
+  \begin{tikzpicture}
+    \fill[fg] (0,0) rectangle (\textwidth, \patagonia@titleseparator@linewidth);
+  \end{tikzpicture}%
+  \par%
+}
+\setbeamertemplate{itemize items}[checkmark]
 
 % Add more internal element definitions here
