@@ -7,14 +7,31 @@
   \begin{minipage}[b][\paperheight]{\textwidth}
     \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
     \vfill%
-    \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
-    \usebeamertemplate*{title separator}
-
-    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
-    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
-    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
-    \vfill
-    \vspace*{1mm}
+    \begin{minipage}{\textwidth}
+      \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+      \usebeamertemplate*{title separator}
+      \vspace*{0.04\paperheight}%
+      \hbox to \textwidth{%
+        \hfil%
+        \begin{minipage}{0.8\textwidth}
+          \centering
+          \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor
+          \ifx\insertinstitute\@empty\else
+            \quad
+            \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute
+          \fi
+        \end{minipage}%
+        \hfil%
+      }
+    \end{minipage}
+    \vfill%
+    \begin{minipage}{\textwidth}
+      \hbox to \textwidth{%
+        \usebeamercolor[fg]{date}\usebeamerfont{date}%
+        \tiny\insertdate%
+        \hfill}%
+        \end{minipage}
+    \vspace*{0.1\paperheight}
   \end{minipage}
 }
 

@@ -1,8 +1,44 @@
 \ProvidesPackage{beamercolorthemepatagonia}
 
-\definecolor{patagoniaGreen}{RGB}{40,55,58}
-\definecolor{patagoniaBlue}{RGB}{0,150,255}
-\definecolor{patagoniaRed}{RGB}{255,38,0}
-\definecolor{patagoniaOrange}{RGB}{255,147,0}
-\setbeamercolor{structure}{fg=patagoniaGreen}
+\definecolor{patagoniaGreen}{HTML}{0E343E}
+\definecolor{patagoniaLightGreen}{HTML}{72CCAE}
+\definecolor{patagoniaBeige}{HTML}{E6DAC6}
+\definecolor{patagoniaOrange}{HTML}{F5572A}
+\definecolor{patagoniaRed}{HTML}{AC2E44}
+
+\setbeamercolor{normal text}{
+  fg=patagoniaGreen,
+}
+\setbeamercolor{alerted text}{%
+  fg=patagoniaRed,
+}
+\setbeamercolor{example text}{%
+  fg=patagoniaLightGreen,
+}
+
+\setbeamercolor{titlelike}{use=normal text, parent=normal text}
+\setbeamercolor{author}{use=normal text, parent=normal text}
+\setbeamercolor{date}{use=normal text, parent=normal text}
+\setbeamercolor{institute}{use=normal text, parent=normal text}
+\setbeamercolor{structure}{use=normal text, fg=normal text.fg}
+
+\setbeamercolor{palette primary}{%
+  use=normal text,
+  fg=normal text.bg,
+  bg=normal text.fg
+}
+
+\setbeamercolor{frametitle}{%
+  use=palette primary,
+  parent=palette primary
+}
+
+\setbeamercolor{progress bar}{%
+  fg=patagoniaLightGreen,
+}
+
+\setbeamercolor{title separator}{
+  use=progress bar,
+  parent=progress bar
+}
 % Add more color definitions and assignments here
